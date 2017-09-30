@@ -1,0 +1,6 @@
+{
+  "database": {
+    "directory": "./database",
+    "name": "burl"
+  }
+}
