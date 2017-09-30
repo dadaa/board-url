@@ -1,0 +1,23 @@
+{
+  "name": "board-url",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dadaa/board-url.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/dadaa/board-url/issues"
+  },
+  "homepage": "https://github.com/dadaa/board-url#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "config": "^1.26.1",
+    "express": "^4.15.3",
+    "nedb": "^1.8.0"
+  }
+}
