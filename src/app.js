@@ -14,3 +14,4 @@ app.listen(port, () => {
 
 app.use('/app/:id', express.static(`${__dirname}/static/app`));
 app.use('/:id', express.static(`${__dirname}/static`));
+app.use('/pcss', express.static(`${__dirname}/static/pcss`));
