@@ -24,7 +24,7 @@ UrlManager.prototype = {
         const url =
           json.length !== 0
           ? this.openUrl(json[0])
-          : "../pcss/pcss-sample.html";
+          : "/pcss/pcss-sample.html";
         this.openUrl(url);
       }
     };
