@@ -12,4 +12,5 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
 
+app.use('/app/:id', express.static(`${__dirname}/static/app`));
 app.use('/:id', express.static(`${__dirname}/static`));
