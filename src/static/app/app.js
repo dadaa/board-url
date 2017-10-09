@@ -20,12 +20,11 @@ UrlManager.prototype = {
     xhr.open('GET', this.url, true);
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4 && xhr.status === 200){
-        const json = JSON.parse(xhr.responseText);
-        const url =
-          json.length !== 0
-          ? this.openUrl(json[0])
-          : "/pcss/pcss-sample.html";
-        this.openUrl(url);
+        const list = JSON.parse(xhr.responseText);
+        const item = list.length !== 0
+                     ? list[0]
+                     : {url: "/pcss/pcss-sample.html", lastupdated: 0};
+        this.openUrl(item);
       }
     };
     xhr.send(null);
