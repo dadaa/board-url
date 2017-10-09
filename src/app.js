@@ -7,7 +7,7 @@ const get = require('./api/get');
 app.use('/api', post);
 app.use('/api', get);
 
-app.listen(3000, () => {
+app.listen(80, () => {
   console.log('Example app listening on port 3000!');
 });
 
