@@ -7,7 +7,6 @@ var CSSDeviceManager = {
   device_elements: [],
   device_number: 0,
   device_map: {},
-  style_observer_config: {attributes: true},
   start: function() {
     var self = this;
 
@@ -145,6 +144,11 @@ var MultiColorLED = function(config, device) {
 MultiColorLED.prototype = {
   update: function(style) {
     var color = style.color;
+    if (this.previous_color == color) {
+      return Promise.resolve();
+    }
+    this.previous_color = color;
+
     var match = /rgba?\((\d+),\s(\d+),\s(\d+)\)/.exec(color);
     var r = parseInt(match[1]);
     var g = parseInt(match[2]);
@@ -193,6 +197,13 @@ Servo.prototype = {
   TO_DEGREE: 360 / (2 * Math.PI),
   update: function(style) {
     var transform = style.transform;
+    var time = Date.now();
+    if (this.previous_transform == transform || time - 100 < this.previous_time) {
+      return Promise.resolve();
+    }
+    this.previous_transform = transform;
+    this.previous_time = time;
+
     //matrix(0, -1, 1, 0, 0, 0)
     var result = /matrix\(([^,]+),\s([^,]+),\s([^,]+),\s([^,]+).*/.exec(transform);
     var m1 = parseFloat(result[1]);
