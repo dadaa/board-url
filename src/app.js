@@ -7,8 +7,8 @@ const get = require('./api/get');
 app.use('/api', post);
 app.use('/api', get);
 
-app.listen(80, () => {
-  console.log('Example app listening on port 3000!');
+app.listen(8080, () => {
+  console.log('Example app listening on port 8080!');
 });
 
 app.use('/:id', express.static(`${__dirname}/static`));
