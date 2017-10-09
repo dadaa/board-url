@@ -21,9 +21,11 @@ UrlManager.prototype = {
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4 && xhr.status === 200){
         const json = JSON.parse(xhr.responseText);
-        if (json.length !== 0) {
-          this.openUrl(json[0]);
-        }
+        const url =
+          json.length !== 0
+          ? this.openUrl(json[0])
+          : "/pcss/pcss-sample.html";
+        this.openUrl(url);
       }
     };
     xhr.send(null);

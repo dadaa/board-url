@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+    <title>WoT Beginners Toolkit</title>
+    <script src="pcss.js"></script>
+    <style>
+    body {
+      padding-top: 0.3em;
+      padding-left: 1.8em;
+      font-size: 100px;
+    }
+
+    #led {
+      color: red;
+      animation-name: led;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    #servo {
+      transform: rotate(0deg); /* 0 to 180 */
+      display: inline-block;
+      animation-name: servo;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes led {
+      0% {
+        color: red;
+      }
+      50% {
+        color: green;
+      }
+      100% {
+        color: blue;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div id="led" data-css-device="type:multi-color-led; port-type:i2c; port-number:0; address:0x40; pwm-pin:0,1,2; min-pulse:0; max-pulse:0.006;">LED</div>
+    <div id="servo" data-css-device="type:servo; port-type:i2c; port-number:0; address:0x40; pwm-pin:3; min-pulse:0.0011; max-pulse:0.00195; angle-range:180;">SERVO<BR><span id="angl"></span></div>
+    <script>
+
+    </script>
+  </body>
+</html>
