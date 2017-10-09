@@ -11,4 +11,6 @@ npm start
   http://$host:3000/api/$id
 * html
   http://$host:3000/$id
+* board app
+  http://$host:3000/app/$id
   
