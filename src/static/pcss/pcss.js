@@ -32,7 +32,6 @@ var CSSDeviceManager = {
     }
 
     var updateDevices = (i, callback) => {
-      console.log("updateDevices:"+i);
       if (self.device_elements.length === i) {
         callback();
         return;
@@ -111,7 +110,6 @@ var CSSDeviceManager = {
 
   update: function(cssDevice, cssDeviceElement) {
     var style = window.getComputedStyle(cssDeviceElement, null);
-    console.log("style"+style);
     return cssDevice.update(style);
   },
 
@@ -423,7 +421,7 @@ I2CSlaveDevice.prototype = {
           this.slaveDevice = data.slaveDevice;
           resolve(data.slaveDevice);
         }else {
-          console.log('i2c.setDeviceAddress: error name:[' + data.error.name + ']');
+          //console.log('i2c.setDeviceAddress: error name:[' + data.error.name + ']');
           reject(data.error);
         }
 
@@ -499,7 +497,7 @@ I2CSlaveDevice.prototype = {
         if (!data.error) {
           resolve(data.value);
         }else {
-          console.log('i2c.read8: error name:[' + data.error.name + ']');
+          //console.log('i2c.read8: error name:[' + data.error.name + ']');
           reject(data.error);
         }
 
@@ -526,7 +524,7 @@ I2CSlaveDevice.prototype = {
         if (!data.error) {
           resolve(data.value);
         }else {
-          console.log('i2c.read16: error name:[' + data.error.name + ']');
+          //console.log('i2c.read16: error name:[' + data.error.name + ']');
           reject(data.error);
         }
 
@@ -582,7 +580,7 @@ I2CSlaveDevice.prototype = {
         if (!data.error) {
           resolve(data.value);
         }else {
-          console.log('i2c.write8: error name:[' + data.error.name + ']');
+          //console.log('i2c.write8: error name:[' + data.error.name + ']');
           reject(data.error);
         }
 
@@ -610,7 +608,7 @@ I2CSlaveDevice.prototype = {
         if (!data.error) {
           resolve(data.value);
         }else {
-          console.log('i2c.write16: error name:[' + data.error.name + ']');
+          //console.log('i2c.write16: error name:[' + data.error.name + ']');
           reject(data.error);
         }
 
