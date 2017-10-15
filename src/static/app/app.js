@@ -12,6 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   socket.on('update', data => {
-    frame.src = data.url;
+    frame.src = `${ data.url }?${ id }`;
   });
 });
