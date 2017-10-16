@@ -18,6 +18,7 @@ io.on("connection", socket => {
   socket.on("request", data => {
     console.log(`[${ data.id }]request`);
     socket.join(data.id);
+    socket.emit('update', { url: "/pcss/pcss-sample.html" });
   });
 
   socket.on("console.log", data => {
