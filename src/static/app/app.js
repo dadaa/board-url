@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   socket.on('update', data => {
-    console.log(`${ data.url }?${ Date.now() }${ id }`);
-    frame.src = `${ data.url }?${ Date.now() }${ id }`;
+    console.log(`${ data.url }?${ Date.now() }?${ id }`);
+    frame.src = `${ data.url }?${ Date.now() }?${ id }`;
   });
 });
